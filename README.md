@@ -20,7 +20,7 @@ abrir a pasta e
 rodar o comando:
 
 ```
-"Espaço reservado para adicionar informações referente a como utilizar o projeto"
+"Espaço reservado para adicionar informações de como um usuário poderá  como utilizar o projeto"
 
 ```
 
