@@ -1,10 +1,9 @@
-package com.soulcode.projetoFinal.repository;
+package com.projetoFinal.universiaTour.repository;
 
-import com.soulcode.projetoFinal.model.Destino;
+import com.projetoFinal.universiaTour.model.Destino;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import jakarta.persistence.Column;
 @Repository
 public interface DestinoRepository extends JpaRepository<Destino, Integer> {
 }
