@@ -1,7 +1,5 @@
 package com.projetoFinal.universiaTour.model;
 
-import javax.security.auth.login.LoginContext;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
