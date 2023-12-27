@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,15 +15,21 @@ public class Destino {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-@Column(nullable = false)
+
+  @Column(nullable = false)
   private String estado;
+  
   @Column(nullable = false)
   private String cidade;
+  
   @Column(nullable = false)
   private String epocas;
+  
   @Column(nullable = false)
   private String clima;
-  @Column(nullable = false)
+  
+  @Lob
+  @Column(nullable = false, length = 500)
   private String linkImagem;
 
 public Destino (){

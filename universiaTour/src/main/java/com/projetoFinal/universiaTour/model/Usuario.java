@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,12 +22,16 @@ public class Usuario {
   private String nome;
   @Column(nullable = false)
   private String email;
-@Column(nullable = false)
+  @Column(nullable = false)
   private String senha;
 
   private LocalDate dataNascimento;
   private String sexo;
+  
+  @Lob
+  @Column(length = 1000)
   private String bio;
+  
   private String interesse;
 
   public Usuario (){
