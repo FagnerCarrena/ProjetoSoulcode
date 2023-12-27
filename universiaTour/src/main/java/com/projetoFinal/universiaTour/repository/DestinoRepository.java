@@ -1,4 +1,4 @@
-package com.soulcode.projetoFinal.repository;
+package com.projetoFinal.univertour.model.repository;
 
 import com.soulcode.projetoFinal.model.Destino;
 import org.springframework.data.jpa.repository.JpaRepository;
