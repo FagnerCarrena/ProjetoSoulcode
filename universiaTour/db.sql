@@ -3,12 +3,12 @@
 
 USE projeto_db;
 
-INSERT INTO usuarios (nome, email, senha, idade, sexo, bio, interesse)VALUES
-("Usuario1","usr1@usr1.com","usr1",1,"Masculino","Biografia1","Interesses 1"),
-("Usuario2","usr2@usr2.com","usr2",2,"Masculino","Biografia2","Interesses 2"),
-("Usuario3","usr3@usr3.com","usr3",3,"Masculino","Biografia3","Interesses 3"),
-("Usuario4","usr4@usr4.com","usr4",4,"Masculino","Biografia4","Interesses 4"),
-("Usuario5","usr5@usr5.com","usr5",5,"Masculino","Biografia5","Interesses 5");
+INSERT INTO usuarios (nome, email, senha, data_nascimento, sexo, bio, interesse)VALUES
+("Usuario1","usr1@usr1.com","usr1","2001-01-01","Masculino","Biografia1","Interesses 1"),
+("Usuario2","usr2@usr2.com","usr2","2002-01-01","Masculino","Biografia2","Interesses 2"),
+("Usuario3","usr3@usr3.com","usr3","2003-01-01","Masculino","Biografia3","Interesses 3"),
+("Usuario4","usr4@usr4.com","usr4","2004-01-01","Masculino","Biografia4","Interesses 4"),
+("Usuario5","usr5@usr5.com","usr5","2005-01-01","Masculino","Biografia5","Interesses 5");
 
 INSERT INTO destinos (estado, cidade, epocas, clima, link_imagem)VALUES
 ("ES1", "Cidade 1", "Época 1", "Clima 1", "Link 1"),

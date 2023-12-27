@@ -1,5 +1,7 @@
 package com.projetoFinal.universiaTour.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +24,7 @@ public class Usuario {
 @Column(nullable = false)
   private String senha;
 
-  private int idade;
+  private LocalDate dataNascimento;
   private String sexo;
   private String bio;
   private String interesse;
@@ -63,12 +65,12 @@ public class Usuario {
     this.senha = senha;
   }
 
-  public int getIdade() {
-    return idade;
+  public LocalDate getDataNascimento() {
+    return dataNascimento;
   }
 
-  public void setIdade(int idade) {
-    this.idade = idade;
+  public void setDataNascimento(LocalDate dataNascimento) {
+    this.dataNascimento = dataNascimento;
   }
 
   public String getSexo() {
