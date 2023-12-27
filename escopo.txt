@@ -1,4 +1,4 @@
-Escopo de Projeto - Viagens
+O Escopo de Projeto - Viagens
 Tecnologias
 HTML
 CSS
