@@ -1,0 +1,59 @@
+Escopo de Projeto - Viagens
+Tecnologias
+HTML
+CSS
+JavaScript
+Java
+MySQL
+Spring Boot
+
+Página Pública:
+- Página Principal: Exibição de informações sobre:
+- destinos populares
+- guias de viagem simples
+- formulário de pesquisa para destinos específicos.
+
+Funcionalidades (CRUDs):
+1. Registro de Usuários: Sistema de registro de usuários com validação de formulário básico, coletando:
+- nome
+- e-mail
+- senha
+  Armazenamento dos dados em um banco de dados MySQL.
+
+2. Perfis de Usuários: Possibilidade de:
+- criar
+- visualizar
+- editar perfis de usuários
+
+Os usuários podem adicionar:
+- informações básicas
+- interesses de viagem
+- uma pequena bio
+
+3. Destinos e Informações: CRUD para gerenciar destinos. Inclusão de informações detalhadas sobre:
+- pontos turísticos
+- atividades
+- clima
+- melhores épocas para visitar
+
+Os dados serão armazenados no banco de dados.
+
+4. Itinerários Simples: Desenvolvimento de itinerários básicos, permitindo aos usuários:
+- criar
+- visualizar
+- editar itinerários para suas viagens
+
+Os itinerários incluirão:
+- atividades
+- locais a visitar
+
+Serão salvos no banco de dados.
+
+Detalhes Adicionais:
+- Autenticação Simples: Implementação de um sistema básico de login para permitir que os usuários acessem suas contas. Não haverá autenticação social ou recuperação de senha por e-mail nesta versão.
+- Interface Responsiva: Garantir que a interface seja responsiva, adaptando-se a diferentes dispositivos (computadores, tablets, celulares).
+- Validação de Dados: Realizar validação de dados nos formulários para garantir a integridade das informações antes de serem inseridas no banco de dados.
+- Segurança Básica: Implementar medidas básicas de segurança para proteger os dados do usuário e prevenir vulnerabilidades conhecidas, como injeção SQL.
+
+Sugestões:
+A equipe responsável pelo desenvolvimento poderia usar HTML para estruturar a interface do usuário, CSS para estilização, JavaScript para funcionalidades front-end, Java com Spring Boot para a lógica de back-end e integração com o banco de dados MySQL para armazenar informações dos usuários, destinos, itinerários e notificações.
