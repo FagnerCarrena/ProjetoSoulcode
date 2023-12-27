@@ -1,7 +1,6 @@
-package com.soulcode.projetoFinal.repository;
+package com.projetoFinal.universiaTour.repository;
 
-import com.soulcode.projetoFinal.model.Intinerario;
-import com.soulcode.projetoFinal.model.Usuario;
+import com.projetoFinal.universiaTour.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

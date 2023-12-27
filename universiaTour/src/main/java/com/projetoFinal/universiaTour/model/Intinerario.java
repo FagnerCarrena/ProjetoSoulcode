@@ -21,11 +21,13 @@ public class Intinerario {
   private Integer id;
   
   @Column(nullable = false)
-private LocalDate dia;
-@Column(nullable = false)
-private LocalTime hora;
-@Column(nullable = false)
-private String atividade;
+  private LocalDate dia;
+  
+  @Column(nullable = false)
+  private LocalTime hora;
+  
+  @Column(nullable = false)
+  private String atividade;
 
 @ManyToOne
 @JoinColumn

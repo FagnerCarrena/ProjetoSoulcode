@@ -1,12 +1,13 @@
 package com.projetoFinal.universiaTour.model;
 
-import javax.security.auth.login.LoginContext;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,12 +22,16 @@ public class Usuario {
   private String nome;
   @Column(nullable = false)
   private String email;
-@Column(nullable = false)
+  @Column(nullable = false)
   private String senha;
 
-  private int idade;
+  private LocalDate dataNascimento;
   private String sexo;
+  
+  @Lob
+  @Column(length = 1000)
   private String bio;
+  
   private String interesse;
 
   public Usuario (){
@@ -65,12 +70,12 @@ public class Usuario {
     this.senha = senha;
   }
 
-  public int getIdade() {
-    return idade;
+  public LocalDate getDataNascimento() {
+    return dataNascimento;
   }
 
-  public void setIdade(int idade) {
-    this.idade = idade;
+  public void setDataNascimento(LocalDate dataNascimento) {
+    this.dataNascimento = dataNascimento;
   }
 
   public String getSexo() {

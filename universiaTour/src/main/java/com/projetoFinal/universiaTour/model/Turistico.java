@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -16,12 +17,21 @@ public class Turistico {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
+  
   @Column(nullable = false)
   private String localidade;
-  @Column(nullable = false)
+  
+  @Lob
+  @Column(nullable = false, length = 500)
   private String localMaps;
-  @Column(nullable = false)
+  
+  @Lob
+  @Column(nullable = false, length = 2000)
   private String descricao;
+
+  @Lob
+  @Column(nullable = false, length = 500)
+  private String linkImagem;
 
   @ManyToOne
   @JoinColumn
@@ -69,6 +79,14 @@ public class Turistico {
 
   public void setDestino(Destino destino) {
     this.destino = destino;
+  }
+
+  public String getLinkImagem() {
+    return linkImagem;
+  }
+
+  public void setLinkImagem(String linkImagem) {
+    this.linkImagem = linkImagem;
   }
 
   
