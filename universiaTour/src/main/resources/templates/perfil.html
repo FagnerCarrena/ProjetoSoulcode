@@ -13,6 +13,38 @@
     Usuário e intinerário
   </p>
   <li> <a th:href="'/perfil/'+${usr.id}" th:text="${usr.nome}"></a></li>
+  <p th:text="${usr.email}"></p>
+  <p th:text="${usr.senha}"></p>
+  <p th:text="${usr.dataNascimento}"></p>
+  <p th:text="${usr.sexo}"></p>
+  <p th:text="${usr.bio}"></p>
+  <p th:text="${usr.interesse}"></p>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>DIA</th>
+      <th>HORA</th>
+      <th>ATIVIDADE</th>
+      <th>USUARIO_ID</th>
+      <th>TURISTICO_ID</th>
+    </tr>
+    <tbody>
+      <tr th:each="intinerarios : ${itr}">
+        <td th:text="${intinerarios.id}"></td>
+        <td th:text="${intinerarios.dia}"></td>
+        <td th:text="${intinerarios.hora}"></td>
+        <td th:text="${intinerarios.atividade}"></td>
+        <td th:text="${intinerarios.usuario.id}"></td>
+        <td th:text="${intinerarios.turistico.id}"></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
 </body>
 
 </html>
