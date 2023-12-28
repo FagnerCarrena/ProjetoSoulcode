@@ -28,51 +28,11 @@
 
             <section class="w-full min-h-72 flex gap-5 justify-center flex-wrap">
                 
-                <!-- <div class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
-                    <img src="https://rederiohoteis.com/wp-content/uploads/2017/09/2017-10-29-cristo-redentor-conheca-a-historia-dessa-maravilha-do-mundo-moderno2.jpg" alt="" class="h-48 w-56 object-cover">
+                <div th:each="destin : ${des}" class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
+                        <img th:src="${destin.linkImagem}" alt="" class="h-48 w-56 object-cover">
                     <div class="flex flex-col items-center">
-                        <h1 class="text-2xl">Rio de Janeiro</h1>
+                        <h1 th:text="${destin.cidade}" class="text-2xl">Rio de Janeiro</h1>
                         <button class="text-lg text-sky-500">Agendar Itinerário</button>
-                    </div>
-                </div> -->
-
-                <div class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
-                    <img src="https://cdn.pixabay.com/photo/2017/01/08/19/30/rio-de-janeiro-1963744_1280.jpg" alt="" class="h-48 w-56 object-cover">
-                    <div class="flex flex-col items-center">
-                        <h1 class="text-2xl">Rio de Janeiro</h1>
-                        <button class="text-lg text-sky-500">ver mais</button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
-                    <img src="https://www.transportal.com.br/noticias/wp-content/uploads/2018/05/Elevador-Lacerda-Salvador.jpg" alt="" class="h-48 w-56 object-cover">
-                    <div class="flex flex-col items-center">
-                        <h1 class="text-2xl">Salvador</h1>
-                        <button class="text-lg text-sky-500">ver mais</button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1kzZqNo50ism1fvk6w207FsBGFCKMcWjSsKDWsNNBkIHvBlVEDxD32MXSSWw7tSUKl8E&usqp=CAU" alt="" class="h-48 w-56 object-cover">
-                    <div class="flex flex-col items-center">
-                        <h1 class="text-2xl">São Paulo</h1>
-                        <button class="text-lg text-sky-500">ver mais</button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIjemqnbigficy_k7re0cddVLIkk4luFSF4iQWhbdtZJBOBRGUu8juXUd4OQHX4D2Jj6g&usqp=CAU" alt="" class="h-48 w-56 object-cover">
-                    <div class="flex flex-col items-center">
-                        <h1 class="text-2xl">Santa Catarina</h1>
-                        <button class="text-lg text-sky-500">ver mais</button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSts_AElha_gwGlY-f4u9Ol2GI45kQy84mrzklk3knotWryW-cGdvMYNYOYimKrGw5qCs&usqp=CAU" alt="" class="h-48 w-56 object-cover">
-                    <div class="flex flex-col items-center">
-                        <h1 class="text-2xl">Alagoas</h1>
-                        <button class="text-lg text-sky-500">ver mais</button>
                     </div>
                 </div>
 
