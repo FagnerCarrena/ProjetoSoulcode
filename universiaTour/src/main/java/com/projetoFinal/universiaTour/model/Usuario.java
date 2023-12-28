@@ -18,20 +18,24 @@ public class Usuario {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   
-  @Column(nullable = false)
+  @Column(nullable = false, length = 50)
   private String nome;
-  @Column(nullable = false)
+
+  @Column(nullable = false, length = 50)
   private String email;
+  
   @Column(nullable = false)
   private String senha;
 
   private LocalDate dataNascimento;
+
   private String sexo;
   
   @Lob
   @Column(length = 1000)
   private String bio;
   
+  @Column(length = 50)
   private String interesse;
 
   public Usuario (){
