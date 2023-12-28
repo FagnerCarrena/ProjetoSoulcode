@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
 </head>
+<body class="h-screen bg-neutral-200 flex justify-center items-center after:w-full after:h-full after:bg-black/60 after:top-0 after:left-0 after:absolute after:z-0">
 
-<body>
-  <h1>Login</h1>
-  <p>
-    Usuário e Spring Secutity
-  </p>
+  <header class="fixed top-0 left-0 w-full p-2 flex justify-center z-10">
+      <h1 class="text-white text-4xl">UniversiaTour</h1>
+  </header>
+
+<form action="" class="flex flex-col gap-3 items-center z-20">
+  <h2 class="text-3xl text-white">Login</h2>
+
+  <div class="flex flex-col gap-2">
+      <label for="email" class="text-xl text-white">Email</label>
+      <input type="text" class="text-xl border-b-2 border-gray p-1 bg-transparent text-white" placeholder="Email">
+  </div>
+
+  <div class="flex flex-col gap-2">
+      <label for="senha" class="text-xl text-white">Senha</label>
+      <input type="text" class="text-xl border-b-2 border-gray p-1 bg-transparent text-white" placeholder="Senha">
+  </div>
+
+  <p class="text-white w-56">Ainda não possui uma conta? <a href="#" class="font-bold">crie uma agora mesmo</a></p>
+
+
+  <button class="text-white text-2xl">Logar</button>
+</form>
+
 </body>
-
 </html>
