@@ -31,8 +31,8 @@ INSERT INTO intinerarios(dia, hora, atividade, usuario_id, turistico_id)VALUES
 ("2023-04-01", "04:01:01", "atividade 4", 3, 4),
 ("2023-05-01", "05:01:01", "atividade 5", 4, 5);
 
--- USE projeto_db;
--- SELECT * FROM usuarios;
--- SELECT * FROM destinos;
--- SELECT * FROM turisticos;
--- SELECT * FROM intinerarios;
+USE projeto_db;
+SELECT * FROM usuarios;
+SELECT * FROM destinos;
+SELECT * FROM turisticos;
+SELECT * FROM intinerarios;
