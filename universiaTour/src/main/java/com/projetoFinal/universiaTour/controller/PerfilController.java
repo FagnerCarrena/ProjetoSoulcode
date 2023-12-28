@@ -34,7 +34,7 @@ public class PerfilController {
   public ModelAndView clientById(@PathVariable Integer id) {
     Optional<Usuario> usuarioOpt = usuarioRepository.findById(id);
       Usuario usuario = usuarioOpt.get();
-      List<Intinerario> intinerarios = intinerarioRepository.findAll();
+      List<Intinerario> intinerarios = intinerarioRepository.findByUsuario(usuario);
       List<Turistico> turisticos = turisticoRepository.findAll();
       ModelAndView mv = new ModelAndView("perfil");
       mv.addObject("usr", usuario);
