@@ -25,9 +25,6 @@ public class PerfilController {
   @Autowired
   private UsuarioRepository usuarioRepository;
 
-
-
-
   @Autowired
   private IntinerarioRepository intinerarioRepository;
 
@@ -41,7 +38,7 @@ public class PerfilController {
       Usuario usuario = usuarioOpt.get();
       List<Intinerario> intinerarios = intinerarioRepository.findByUsuario(usuario);
       List<Turistico> turisticos = turisticoRepository.findAll();
-      ModelAndView mv = new ModelAndView("perfil");
+      ModelAndView mv = new ModelAndView("testesperfil");
       mv.addObject("usr", usuario);
       mv.addObject("itr", intinerarios);
       mv.addObject("tur", turisticos);
