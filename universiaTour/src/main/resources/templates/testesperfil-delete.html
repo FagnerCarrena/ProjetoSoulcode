@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="/perfil/delete" method="post" th:action="/home">
+    <input type="hidden" name="id" th:value="${usr.id}">
+    <button>Excluir</button>
+  </form>
+</body>
+
+</html>
