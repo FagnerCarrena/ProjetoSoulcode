@@ -1,5 +1,6 @@
 package com.projetoFinal.universiaTour.controller;
 
+import java.net.URLEncoder;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,18 +49,54 @@ public class PerfilController {
       return erro;
     }
   }
+//
 
-@PostMapping(value = "/testesperfil/edit")
-public String edit(Usuario usuario){
-  Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuario.getId());
-  if(usuarioOpt.isPresent()){
-    usuarioRepository.save(usuario);
-    return "'redirect:/testesperfil/' +  usuario.getId()";
+@GetMapping(value = "/testesperfil/{id}/edit")
+  public ModelAndView update(@PathVariable Integer id){
+          Optional<Usuario> usuarioOpt = usuarioRepository.findById(id);
+      if(usuarioOpt.isPresent()) {
+        ModelAndView mv = new ModelAndView("testesperfil-edit");
+        Usuario usuario = usuarioOpt.get();
+        mv.addObject("usr", usuario);
+        return mv;
+      }
+      ModelAndView erro = new ModelAndView("erro");
+            erro.addObject("msg", "Cliente não encontrado");
+            return erro;
   }
-  return "'/testesperfil/' +  usuario.getId()";
+//
+// @PostMapping(value = "/testesperfil/{id}")
+// public String edit(Usuario usuario){
+// try{
+//     Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuario.getId());
+//   if(usuarioOpt.isPresent()){
+//     usuarioRepository.save(usuario);
+//     return "'redirect:/testesperfil/' +  usuario.getId()";
+//   }
+// }catch(Exception exc){
+//   return "erro";
+// }
+//    return "'redirect:/testesperfil/' +  usuario.getId()";
+// }
+//
+
+@PostMapping(value = "/testesperfil/{id}")
+public ModelAndView edit(@PathVariable Integer id, Usuario usuario){
+  ModelAndView modelAndView = new ModelAndView();
+  try{
+    usuarioRepository.findById(id).orElseThrow(() -> new Exception() );
+    usuarioRepository.save(usuario);
+    String pf = "" + usuario.getId();
+modelAndView.setViewName("'redirect:''" + pf);
+    
+  }catch(Exception exc){
+    modelAndView.setViewName("erro");
+    modelAndView.addObject("message", exc.getMessage());
+  }
+  return modelAndView;
 }
 
-@PostMapping(value = "/intinerario/edit")
+//@PostMapping(value = "/intinerario/edit")
 public String edit(Intinerario intinerario){
   Optional<Intinerario> intinerarioOpt = intinerarioRepository.findById(intinerario.getId());
   if(intinerarioOpt.isPresent()){

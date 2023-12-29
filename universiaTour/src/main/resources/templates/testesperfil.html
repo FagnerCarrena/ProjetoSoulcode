@@ -20,6 +20,9 @@
     <p th:text="${usr.sexo}"></p>
     <p th:text="${usr.bio}"></p>
     <p th:text="${usr.interesse}"></p>
+    <a th:href="'/testesperfil/'+${usr.id}+'/edit'">
+      <button>Editar</button>
+    </a>
 
     <table>
       <tr>
@@ -38,6 +41,11 @@
           <td th:text="${intinerarios.atividade}"></td>
           <td th:text="${intinerarios.usuario.id}"></td>
           <td th:text="${intinerarios.turistico.localidade}"></td>
+
+
+
+
+
         </tr>
       </tbody>
     </table>

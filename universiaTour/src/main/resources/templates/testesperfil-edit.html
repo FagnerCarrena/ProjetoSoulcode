@@ -4,32 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editar Usuario</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Editar Usuário</title>
 </head>
 
 <body>
-  <h1>Editar Cliente</h1>
+  <h1>Editar Usuário</h1>
 
-  <form action="/clientes/edit" method="post">
-    <input type="hidden" name="id" th:value="${cl.id}">
+  <form action="'/testesperfil/' + ${usr.id}" method="post">
+    <input type="hidden" name="id" th:value="${usr.id}">
 
     <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" th:value="${cl.nome}" required>
+    <input type="text" name="nome" id="nome" th:value="${usr.nome}" required>
+    <br>
 
     <label for="email">Email</label>
-    <input type="email" name="email" id="email" th:value="${cl.email}" required>
+    <input type="email" name="email" id="email" th:value="${usr.email}" required>
+    <br>
 
-    <label for="preferencia">Preferência</label>
-    <input type="text" name="preferencia" id="preferencia" th:value="${cl.preferencia}" required>
+    <label for="senha">Senha</label>
+    <input type="text" name="senha" id="senha" th:value="${usr.senha}" required>
+    <br>
 
-    <label for="filiacao">Filiação</label>
-    <input type="date" name="filiacao" id="filiacao" th:value="${cl.filiacao}" required>
+    <label for="dataNascimento">Data Nascimento</label>
+    <input type="date" name="dataNascimento" id="dataNascimento" th:value="${usr.dataNascimento}" required>
+    <br>
+
+    <label for="sexo">Sexo</label>
+    <input type="text" name="sexo" id="sexo" th:value="${usr.sexo}" required>
+    <br>
+
+    <label for="bio">Bio</label>
+    <input type="text" name="bio" id="bio" th:value="${usr.bio}" required>
+    <br>
+
+    <label for="interesse">Interesse</label>
+    <input type="text" name="interesse" id="interesse" th:value="${usr.interesse}" required>
+    <br>
 
     <button>Enviar</button>
   </form>
 
-  <a href="/clientes">Voltar</a>
+
 </body>
 
 </html>
