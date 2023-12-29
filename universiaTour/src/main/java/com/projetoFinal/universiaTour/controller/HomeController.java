@@ -15,7 +15,7 @@ public class HomeController {
     @Autowired
     private DestinoRepository destinoRepository;
 
-    @GetMapping(value = "/")
+     @GetMapping(value = {"/", "/home"})
     public ModelAndView Destino() {
         List<Destino> destin =  destinoRepository.findAll();
         ModelAndView mv = new ModelAndView("index");

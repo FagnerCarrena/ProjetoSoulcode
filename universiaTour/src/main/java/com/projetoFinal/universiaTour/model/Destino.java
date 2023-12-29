@@ -22,7 +22,7 @@ public class Destino {
   @Column(nullable = false, length = 50)
   private String cidade;
   
-  @Column(nullable = false, length = 50)
+  @Column(nullable = false, length = 150)
   private String epocas;
   
   @Column(nullable = false, length = 50)

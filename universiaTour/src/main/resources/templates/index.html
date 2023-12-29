@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,42 +10,27 @@
     <link rel="stylesheet" th:href="@{/CSS/animations.css}">    
     <title>Document</title>
 </head>
+
 <body class="">
 
     <main class="max-w-screen m-auto bg-neutral-200">
         <div class="h-screen relative bg-[url('https://source.unsplash.com/1200x800/?backpacking')] bg-fixed bg-no-repeat bg-cover flex justify-center items-center flex-col after:w-full after:h-full after:bg-black/60 after:top-0 after:left-0 after:absolute">
-            <h1 class="z-20 text-white text-3xl md:text-6xl">UniversiaTour</h1>
+            <h1 class="z-20 text-white text-6xl">UniversiaTour</h1>
 
-            <a href="#" class="text-white text-2xl z-20 absolute top-3 right-3 p-2">Login</a>
-
-            <i class="floating bi bi-caret-down absolute bottom-7 text-white text-6xl z-20"></i>
-        </div>  
-
-        
+        </div>
 
         <div class="flex flex-col justify-center items-center bg-neutral-200 p-4">
             <h2 class="bi bi-geo-alt-fill text-3xl md:text-5xl my-6">Principais Destinos</h2>
 
-            
+            <div class="w-full flex gap-5 justify-center flex-wrap">
 
             <section class="w-full min-h-72 flex gap-5 justify-center flex-wrap">
                 
-                <!-- <div th:each="destin : ${des}" class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
+                <div th:each="destin : ${des}" class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
                         <img th:src="${destin.linkImagem}" alt="" class="h-48 w-56 object-cover">
                     <div class="flex flex-col items-center">
                         <h1 th:text="${destin.cidade}" class="text-2xl"></h1>
                         <button class="text-lg text-sky-500">Agendar Itinerário</button>
-                    </div>
-                </div> -->
-
-                <div th:each="destin : ${des}" class="relative cursor-pointer overflow-hidden relative text-gray-50 h-44 w-56 rounded-2xl">
-                    <div class="w-56 h-72 text-gray-800">
-                      <div class="flex flex-row justify-between">
-                      <img th:src="${destin.linkImagem}" alt="">
-                      </div>
-                    </div>
-                    <div class="absolute bg-gray-50 -bottom-24 w-56 p-3 flex flex-col gap-1 bottom-0 group-hover:duration-600 duration-500">
-                      <span th:text="${destin.cidade}" class="text-gray-800 font-bold text-md">Rio de Janeiro</span>
                     </div>
                   </div>
 
@@ -61,6 +48,13 @@
                         <p>Fazer uma lista de itens pode te salvar (e muito) em qualquer viagem. Se você deixar para organizar tudo um dia antes de partir, pode esquecer muitas coisas. 
                         </p>
                     </div>
+                <div class="flex flex-col items-center bg-white shadow-md p-1 rounded-md h-64 w-56">
+                    <img src="https://www.transportal.com.br/noticias/wp-content/uploads/2018/05/Elevador-Lacerda-Salvador.jpg" alt="" class="h-48 w-56 object-cover">
+                    <div class="flex flex-col items-center">
+                        <h1 class="text-2xl">Salvador</h1>
+                        <button class="text-lg text-sky-500">Agendar Itinerário</button>
+                    </div>
+                </div>
 
                     <div class="h-64 w-64 bg-yellow-300 p-1 shadow-md">
                         <h2 class="my-2 text-xl font-semibold">Respeite e entenda a cultura dos locais que você visitar</h2>
@@ -79,82 +73,6 @@
                         <p>As redes sociais podem te ajudar a encontrar pontos turísticos não tão conhecidos e eventos locais, além de ter a possibilidade de conhecer outras pessoas que também estão visitando a região.
                         </p>
                     </div>
-                </div> -->
-
-                <!-- Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-9">
-                    <!-- First column -->
-                    <div>
-                    <!-- Component headings -->
-                    <h5 class="text-lg font-bold mb-2">Faça uma lista de itens necessários</h5>
-
-                    <!-- Text -->
-                    <p class="text-neutral-600">
-                        Fazer uma lista de itens pode te salvar (e muito) em qualquer viagem. Se você deixar para organizar tudo um dia antes de partir, pode esquecer muitas coisas.
-                    </p>
-                    </div>
-                    <!-- First column -->
-
-                    <!-- Second column -->
-                    <div>
-                    <!-- Component headings -->
-                    <h5 class="text-lg font-bold mb-2">Respeite e entenda a cultura dos locais que você visitar</h5>
-
-
-                    <!-- Text -->
-                    <p class="text-neutral-600">
-                        Você deve sempre lembrar que é um visitante nos lugares que viaja e, em muitos casos, as pessoas terão costumes e tradições diferentes do que você está acostumado.
-                    </p>
-                    </div>
-                    <!-- Second column -->
-
-                    <!-- Third column -->
-                    <div>
-                    <!-- Component headings -->
-                    <h5 class="text-lg font-bold mb-2">Controle os gastos e faça um orçamento</h5>
-
-                    <!-- Text -->
-                    <p class="text-neutral-600">
-                        Seja para calcular a gasolina necessária, o preço dos passeios, comidas, ou até mesmo o preço das passagens e hotéis, planeje-se antes, tenha um orçamento planejado e tente ao máximo não ultrapassá-lo.
-                    </p>
-                    </div>
-                    <!-- Third column -->
-
-                    <!-- Fourth column -->
-                    <div>
-                        <!-- Component headings -->
-                        <h5 class="text-lg font-bold mb-2">Use as redes sociais para ter uma viagem mais completa</h5>
-    
-                        <!-- Text -->
-                        <p class="text-neutral-600">
-                            Seja para calcular a gasolina necessária, o preço dos passeios, comidas, ou até mesmo o preço das passagens e hotéis, planeje-se antes, tenha um orçamento planejado e tente ao máximo não ultrapassá-lo.
-                        </p>
-                        </div>
-                        <!-- Fourth column -->
-
-                        <!-- Fifth column -->
-                        <div>
-                            <!-- Component headings -->
-                            <h5 class="text-lg font-bold mb-2">Veja a previsão do tempo</h5>
-        
-                            <!-- Text -->
-                            <p class="text-neutral-600">
-                                O clima no local onde você viaja pode ser bem diferente de onde você mora. Por isso, procure pesquisar mais sobre o clima local de onde você viajará e tome cuidado para não viajar em temporadas de chuva, por exemplo, pois isso pode atrapalhar seus planos e prejudicar sua viagem como um todo.
-                            </p>
-                        </div>
-                        <!-- Fifth column -->
-
-                        <!-- Fifth column -->
-                        <div>
-                            <!-- Component headings -->
-                            <h5 class="text-lg font-bold mb-2">Esteja sempre atento</h5>
-        
-                            <!-- Text -->
-                            <p class="text-neutral-600">
-                                Ninguém merece ser roubado, principalmente, quando estamos viajando, afinal isso quebra um pouco o clima de viagem. Para evitar que isso aconteça, tome mais precauções para evitar furtos, mas lembre de não se preocupar exageradamente, pois isso também pode prejudicar a viagem. 
-                            </p>
-                        </div>
-                        <!-- Fifth column -->
                 </div>
                 
             </section>
@@ -267,6 +185,24 @@
   
   </footer>
     </main>
-    
+
+    <ul th:each="destin : ${des}">
+        <li> <a th:href="'/home/'+${destin.id}" th:text="${destin.estado}"></a>
+        </li>
+
+        <li> <a th:href="'/home/'+${destin.id}" th:text="${destin.cidade}"></a>
+        </li>
+
+        <li> <a th:href="'/home/'+${destin.id}" th:text="${destin.epocas}"></a>
+        </li>
+
+        <li> <a th:href="'/home/'+${destin.id}" th:text="${destin.clima}"></a>
+        </li>
+
+        <li> <a th:href="'/home/'+${destin.id}" th:text="${destin.linkImagem}"></a>
+        </li>
+    </ul>
+
 </body>
+
 </html>
