@@ -4,15 +4,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <title>Document</title>
 </head>
 
 <body>
-  <h1>Página de perfil</h1>
+  <!-- <h1>Página de perfil</h1>
   <p>
     Usuário e intinerário
   </p>
-  <li> <a th:href="'/perfil/'+${usr.id}" th:text="${usr.nome}"></a></li>
+  <li> <a th:href="'/perfil/'+${usr.id}" th:text="${usr.nome}"></a></li> -->
+  <header class="bg-black p-3 fixed top-0 left-0 w-full flex justify-center items-center shadow-md z-20">
+    <h1 class="text-white text-3xl">UniversiaTour</h1>
+
+ </header>
+ 
+ <div class="mx-auto mt-16 max-w-screen-lg bg">
+     <div class="h-64 relative">
+         <img src="https://source.unsplash.com/1200x800/?landscape" class="h-full w-full object-cover">
+         
+         <div class="absolute top-[75%] left-4 flex flex-col items-start gap-2 ">
+            
+             <img src="https://uploads.spiritfanfiction.com/historias/capitulos/202211/dream-24425306-231120221723.png" alt="" class="rounded-full h-36 border-2 border-zinc-700">
+             
+             <h3 th:text="${usr.nome}" class="text-3xl text-black"> <button class="bi bi-pencil-square text-[24px]"></button></h3>
+             <div>
+              <h3 class="text-xl text-black">sexo: <span th:text="${usr.sexo}">Masculino</span></h3>
+              <h3 class="text-xl text-black">nascimento: <span th:text="${usr.dataNascimento}">03/04/2004</span></h3>
+             </div>
+             
+         </div>
+         <div class="mt-[160px] p-4">
+             <section class="py-8">
+             <h2 class="text-black text-3xl font-semibold">Sobre mim</h2>
+             <p th:text="${usr.bio}" class="text-neutral-600 indent-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor beatae maxime vel ad ullam et a animi voluptates ipsum culpa recusandae, ratione harum molestias possimus maiores esse iusto officia dolores? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quaerat inventore aut delectus omnis ipsam. Asperiores ratione ipsum sapiente cum sunt quidem nobis sint itaque, temporibus magnam veniam saepe quae?</p>
+         </section>
+
+         <section>
+             <h2 class="text-black text-3xl font-semibold mb-3">My posts</h2>
+             <div class="grid grid-cols-4 gap-2">
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?jdm" alt="" class="rounded-md">
+                 </div>
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?jdm-cars" alt="" class="rounded-md">
+                 </div>
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?jdm-street" alt="" class="rounded-md">
+                 </div>
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?jdm&-track" alt="" class="rounded-md">
+                 </div>
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?drift-car" alt="" class="rounded-md">
+                 </div>
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?jdm&suzuka" alt="" class="rounded-md">
+                 </div>
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?jdm&cars" alt="" class="rounded-md">
+                 </div>
+                 <div>
+                     <img src="https://source.unsplash.com/600x600/?jdm&racing-cars" alt="" class="rounded-md">
+                 </div>
+             </div>
+         </section>
+         <footer class="p-2 text-neutral-400">
+     All Rights Reserved
+ </footer>
+         </div>
+     </div>
+     
+ </div>
+
 </body>
 
 </html>
