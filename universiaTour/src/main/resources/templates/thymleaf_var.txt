@@ -1,0 +1,33 @@
+Destino = dst
+dst.id = Integer id;
+dst.estado = String estado - nullable = false, length = 2;
+dst.cidade = String cidade - nullable = false, length = 50;  
+dst.epocas = String epocas - nullable = false, length = 50;  
+dst.clima = String clima - nullable = false, length = 50;
+dst.linkImagem = String linkImagem - nullable = false, length = 500;  
+#####################################################################
+Intinerario = itr
+itr.id = Integer id;
+itr.dia = LocalDate dia - nullable = false;
+itr.hora = LocalTime hora - nullable = false;
+itr.atividade = String atividade - nullable = false;
+itr.usuario.id = Usuario usuario, @ManyToOne;
+itr.turistico.id = Turistico turistico , @ManyToOne;
+#####################################################################
+Turistico = tur
+tur.id = Integer id;
+tur.localidade = localidade - nullable = false, length = 50;
+tur.localMaps = String localMaps - nullable = false, length = 500;
+tur.descricao = String descricao - nullable = false, length = 2000;
+tur.linkImagem = String linkImagem - nullable = false, length = 500;
+tur.destino.id = Destino destino, @ManyToOne;
+#####################################################################
+Usuario = usr
+usr.id = Integer id;
+usr.nome = String nome - nullable = false, length = 50;
+usr.email = String email - nullable = false, length = 50;
+usr.senha = String senha - nullable = false;
+usr.dataNascimento = LocalDate dataNascimento;
+usr.sexo = String sexo;
+usr.bio = String bio - length = 1000;
+usr.interesse = String interesse - length = 50;
