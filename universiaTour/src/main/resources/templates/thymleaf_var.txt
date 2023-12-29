@@ -2,7 +2,7 @@ Destino = dst
 dst.id = Integer id;
 dst.estado = String estado - nullable = false, length = 2;
 dst.cidade = String cidade - nullable = false, length = 50;  
-dst.epocas = String epocas - nullable = false, length = 50;  
+dst.epocas = String epocas - nullable = false, length = 150;  
 dst.clima = String clima - nullable = false, length = 50;
 dst.linkImagem = String linkImagem - nullable = false, length = 500;  
 #####################################################################
