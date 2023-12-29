@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="h-screen bg-neutral-300 flex justify-center items-center">
+    
+<form action="" class="flex flex-col gap-3">
+    <h2>Editar itinerário</h2>
+    <input type="hidden" name="id">
+    <div class="flex flex-col gap-2">
+        <label for="data">Data</label>
+        <input type="date" name="data" id="data">
+    </div>
+
+    <div class="flex flex-col gap-2">
+        <label for="hora">Hora</label>
+        <input type="time" name="hora" id="hora">
+    </div>
+
+    <div class="flex flex-col gap-2">
+        <label for="atividade">Atividade</label>
+        <textarea name="atividade" id="atividade"></textarea>
+    </div>
+
+    <select name="Turistico" id="Turistico">
+        <option disabled selected value="">Editar Ponto Turistico</option>
+    </select>
+
+    <button>enviar</button>
+</form>
+
+</body>
+</html>

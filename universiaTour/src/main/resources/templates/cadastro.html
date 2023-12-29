@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url(https://source.unsplash.com/1200x800/?travel);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
+<body class="h-screen bg-neutral-200 flex justify-center items-center after:w-full after:h-full after:bg-black/60 after:top-0 after:left-0 after:absolute">
 
-<body>
-  <h1>Página de cadastro</h1>
-  <p>Usuario</p>
+<form action="" class="flex flex-col gap-3 items-center z-20">
+    <h2 class="text-3xl text-white">registrar</h2>
+
+    <div class="flex flex-col">
+        <label for="nome" class="text-xl text-white">nome</label>
+        <input type="text" class="text-xl border-b-2 border-gray p-1 bg-transparent text-white" placeholder="nome">
+    </div>
+
+    <div class="flex flex-col">
+        <label for="email" class="text-xl text-white">email</label>
+        <input type="text" class="text-xl border-b-2 border-gray p-1 bg-transparent text-white" placeholder="eMail">
+    </div>
+
+    <div class="flex flex-col">
+        <label for="senha" class="text-xl text-white">senha</label>
+        <input name="senha" type="text" class="text-xl border-b-2 border-gray p-1 bg-transparent text-white" placeholder="Senha">
+    </div>
+
+    <div class="flex flex-col">
+        <label for="senha" class="text-xl text-white">Data de Nascimento</label>
+        <input name="dataNascimento" type="date" class="text-xl border-b-2 border-gray p-1 bg-transparent text-white">
+    </div>
+
+    <div class="flex flex-col">
+        <select name="sexo" id="" class="text-white bg-transparent">
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="prefiro não informar">prefiro nã0 informar</option>
+        </select>
+    </div>
+
+    <button class="text-white text-2xl">enviar</button>
+</form>
+
 </body>
-
 </html>

@@ -1,4 +1,3 @@
-
 package com.projetoFinal.universiaTour.controller;
 
 
@@ -50,13 +49,7 @@ public class TuristicoController {
             erro.addObject("msg", "Destino não encontrado");
             return erro;
         }
-    }
+    };
 
 
 }
-
-
-
-
-
-

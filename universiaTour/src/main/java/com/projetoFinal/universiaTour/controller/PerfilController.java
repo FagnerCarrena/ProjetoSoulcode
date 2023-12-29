@@ -26,6 +26,9 @@ public class PerfilController {
   @Autowired
   private UsuarioRepository usuarioRepository;
 
+
+
+
   @Autowired
   private IntinerarioRepository intinerarioRepository;
 
