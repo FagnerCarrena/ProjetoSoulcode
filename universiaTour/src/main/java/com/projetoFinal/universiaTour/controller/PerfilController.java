@@ -35,7 +35,7 @@ public class PerfilController {
   @Autowired
   private TuristicoRepository turisticoRepository;
 
-  @GetMapping(value = "/perfil/{id}")
+  @GetMapping(value = "/testesperfil/{id}")
   public ModelAndView clientById(@PathVariable Integer id) {
     try{
       Optional<Usuario> usuarioOpt = usuarioRepository.findById(id);
@@ -53,14 +53,14 @@ public class PerfilController {
     }
   }
 
-@PostMapping(value = "/perfil/edit")
+@PostMapping(value = "/testesperfil/edit")
 public String edit(Usuario usuario){
   Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuario.getId());
   if(usuarioOpt.isPresent()){
     usuarioRepository.save(usuario);
-    return "'redirect:/perfil/' +  usuario.getId()";
+    return "'redirect:/testesperfil/' +  usuario.getId()";
   }
-  return "'/perfil/' +  usuario.getId()";
+  return "'/testesperfil/' +  usuario.getId()";
 }
 
 @PostMapping(value = "/intinerario/edit")
@@ -70,7 +70,7 @@ public String edit(Intinerario intinerario){
     intinerarioRepository.save(intinerario);
     return "'redirect:/intinerario/edit";
   }
-  return "'/perfil/' +  usuario.getId()";
+  return "'/testesperfil/' +  usuario.getId()";
 }
 
 }
