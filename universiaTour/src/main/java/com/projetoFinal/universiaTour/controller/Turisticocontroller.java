@@ -50,7 +50,7 @@ public class TuristicoController {
             erro.addObject("msg", "Destino não encontrado");
             return erro;
         }
-    }
+    };
 
 
 }
