@@ -1,28 +1,53 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com"></script>
   <title>Document</title>
 </head>
 
 <body>
-  
-  <div class="h-96 relative bg-[url('https://source.unsplash.com/1200x800/?Salvador')] bg-fixed bg-no-repeat bg-cover flex justify-center items-center flex-col after:w-full after:h-full after:bg-black/60 after:top-0 after:left-0 after:absolute">
-    <h2 class="text-white text-6xl z-10">Salvador</h2>
+  <h1>Página de Destino</h1>
+  <p>Informacoes</p>
 
-    <div class="flex gap-5 text-3xl text-white z-10">
-      <h3>maceio</h3>
-      <h3>alagoas</h3>
-      <h3>acre</h3>
-    </div>
-  </div>
+  <ul th:each="tur : ${turisticos}">
 
-  <div>
+    <li th:text="${tur.localidade}"></li>
+    <li th:text="${tur.descricao}"></li>
 
-  </div>
+    <li th:text="${link_imagem}"></li>
+
+
+
+
+  </ul>
+
+  <table>
+    <tr>
+      <th>Estado</th>
+      <th>Cidade</th>
+      <th>clima</th>
+      <th>Epocas</th>
+      <th>Link_da_Imagem</th>
+
+    </tr>
+    <tbody>
+      <tr th:each="destino : ${dest}">
+        <td th:text="${destino.estado}"></td>
+        <td th:text="${destino.cidade}"></td>
+        <td th:text="${destino.clima}"></td>
+        <td th:text="${destino.epocas}"></td>
+        <td th:text="${destino.linkImagem}"></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+
 
 </body>
+
 </html>
