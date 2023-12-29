@@ -55,11 +55,19 @@ public String edit(Usuario usuario){
   Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuario.getId());
   if(usuarioOpt.isPresent()){
     usuarioRepository.save(usuario);
-    return "redirect:/perfil/{id}";
+    return "'redirect:/perfil/' +  usuario.getId()";
   }
-  return "/perfil/{id}";
+  return "'/perfil/' +  usuario.getId()";
 }
 
-
+@PostMapping(value = "/intinerario/edit")
+public String edit(Intinerario intinerario){
+  Optional<Intinerario> intinerarioOpt = intinerarioRepository.findById(intinerario.getId());
+  if(intinerarioOpt.isPresent()){
+    intinerarioRepository.save(intinerario);
+    return "'redirect:/intinerario/edit";
+  }
+  return "'/perfil/' +  usuario.getId()";
+}
 
 }
