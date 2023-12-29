@@ -20,7 +20,7 @@
 
  </header>
  
- <div class="mx-auto mt-16 max-w-screen-lg bg">
+ <div class="mx-auto mt-14 max-w-screen-lg bg">
      <div class="h-64 relative">
          <img src="https://source.unsplash.com/1200x800/?landscape" class="h-full w-full object-cover">
          
@@ -41,34 +41,37 @@
              <p th:text="${usr.bio}" class="text-neutral-600 indent-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor beatae maxime vel ad ullam et a animi voluptates ipsum culpa recusandae, ratione harum molestias possimus maiores esse iusto officia dolores? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quaerat inventore aut delectus omnis ipsam. Asperiores ratione ipsum sapiente cum sunt quidem nobis sint itaque, temporibus magnam veniam saepe quae?</p>
          </section>
 
-         <section>
-             <h2 class="text-black text-3xl font-semibold mb-3">My posts</h2>
-             <div class="grid grid-cols-4 gap-2">
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?jdm" alt="" class="rounded-md">
-                 </div>
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?jdm-cars" alt="" class="rounded-md">
-                 </div>
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?jdm-street" alt="" class="rounded-md">
-                 </div>
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?jdm&-track" alt="" class="rounded-md">
-                 </div>
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?drift-car" alt="" class="rounded-md">
-                 </div>
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?jdm&suzuka" alt="" class="rounded-md">
-                 </div>
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?jdm&cars" alt="" class="rounded-md">
-                 </div>
-                 <div>
-                     <img src="https://source.unsplash.com/600x600/?jdm&racing-cars" alt="" class="rounded-md">
-                 </div>
-             </div>
+         <section class="flex flex-col items-center">
+             <h2 class="text-black text-3xl font-semibold mb-3">Meus Itinerários</h2>
+             
+          <table class="shadow-md w-full">
+            <tr>
+              <th class="px-4 text-xl">Ponto Turístico</th>
+              <th class="px-4 text-xl">Data</th>
+              <th class="px-4 text-xl">Hora</th>
+              <th class="px-4 text-xl">Atividade</th>
+              <th class="px-4 text-xl text-cyan-500">Editar</th>
+              <th class="px-4 text-xl text-red-500">Deletar</th>
+            </tr>
+
+            <tbody>
+              <tr th:each="itr : ${itr}">
+                  <td th:text="${itr.Turistico.localidade}"></td>
+                  <td th:text="${itr.dia}"></td>
+                  <td th:text="${itr.hora}"></td>
+                  <td th:text="${itr.atividade}"></td>
+                  <td class="text-center">
+                      <a href="#" class="text-sky-500 font-semibold">Editar</a>
+                  </td>
+                  <td class="text-center">
+                      <form action="/" method="post">
+                          <input type="hidden" name="id" th:value="${itr.id}">
+                          <button class="text-red-500 font-semibold">deletar</button>
+                      </form>
+                  </td>
+              </tr>
+          </tbody>
+          </table>
          </section>
          <footer class="p-2 text-neutral-400">
      All Rights Reserved
