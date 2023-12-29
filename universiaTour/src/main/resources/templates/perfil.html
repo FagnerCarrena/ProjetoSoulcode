@@ -6,81 +6,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" th:href="@{/CSS/style.css}">
+  th:href="@{/CSS/style.css}"
   <title>Document</title>
 </head>
 
-<body>
-  <!-- <h1>Página de perfil</h1>
-  <p>
-    Usuário e intinerário
-  </p>
-  <li> <a th:href="'/perfil/'+${usr.id}" th:text="${usr.nome}"></a></li> -->
-  <header class="bg-black p-3 fixed top-0 left-0 w-full flex justify-center items-center shadow-md z-20">
-    <h1 class="text-white text-3xl">UniversiaTour</h1>
+<body class="relative">
 
+  <div class="modal fixed hidden bg-black/60 top-0  w-full h-full flex justify-center items-center z-40" id="">
+    
+    <div class="pop-up">
+      <button class="bg-white" id="closeModalBtn" onclick="closeModal()">fechar</button>
+      <form action="" class="bg-white flex flex-col items-center p-2">
+      <h2>editar usuário</h2>
+      <input type="hidden" th:value="${usr.id}">
+
+      <div class="flex flex-col">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" th:value="${usr.nome}" class="text-2xl border-2 border-black">
+      </div>
+
+      <div class="flex flex-col">
+        <label for="email">email</label>
+        <input type="text" name="email" th:value="${usr.email}" class="text-2xl border-2 border-black">
+      </div>
+
+      <div class="flex flex-col">
+        <label for="email">senha</label>
+        <input type="text" name="senha" th:value="${usr.senha}" class="text-2xl border-2 border-black">
+      </div>
+
+      <div class="flex flex-col">
+        <label for="email">Data de Nascimento</label>
+        <input type="text" name="senha" th:value="${usr.dataNascimento}" class="text-2xl border-2 border-black">
+      </div>
+
+      <div class="flex flex-col">
+        <label for="sexo">sexo</label>
+        <select name="sexo" id="sexo">
+          <option disabled selected value=""></option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="null">Prefiro não dizer</option>
+        </select>
+      </div>
+
+      <div class="flex flex-col">
+        <label for="bio">Bio</label>
+        <textarea name="bio" id="bio" th:text="${usr.bio}" class="text-2xl border-2 border-black"></textarea>
+      </div>
+      <div class="flex flex-col">
+        <label for="interesse">Interesse de viagem</label>
+        <textarea name="interesse" id="bio" th:text="${usr.interesse}" class="text-2xl border-2 border-black"></textarea>
+      </div>
+      
+        <button>editar</button>
+      </div>
+    </form>
+    </div>
+    
+    
+  </div>
+  
+  <header class="bg-black p-3 fixed top-0 left-0 w-full flex justify-center items-center shadow-md z-20">
+    <a href="/" class="text-white text-3xl">UniversiaTour</a>
  </header>
  
- <div class="mx-auto mt-14 max-w-screen-lg bg">
+ <div class="mx-auto mt-14 max-w-screen-lg ">
      <div class="h-64 relative">
-         <img src="https://source.unsplash.com/1200x800/?landscape" class="h-full w-full object-cover">
+         <img src="https://source.unsplash.com/1200x800/?landscape" class="h-full w-full object-cover brightness-[.25]">
+         <div class="flex gap-2 text-3xl text-white absolute left-4 bottom-2">
+            <h3 th:text="${usr.nome}">Gabriel Frutuoso</h3>
+            <button class="bi bi-pencil-square text-[24px] text-white" onclick="openModal()"></button>
+         </div>
          
-         <div class="absolute top-[75%] left-4 flex flex-col items-start gap-2 ">
-            
-             <img src="https://uploads.spiritfanfiction.com/historias/capitulos/202211/dream-24425306-231120221723.png" alt="" class="rounded-full h-36 border-2 border-zinc-700">
-             
-             <h3 th:text="${usr.nome}" class="text-3xl text-black"> <button class="bi bi-pencil-square text-[24px]"></button></h3>
-             <div>
-              <h3 class="text-xl text-black">sexo: <span th:text="${usr.sexo}">Masculino</span></h3>
-              <h3 class="text-xl text-black">nascimento: <span th:text="${usr.dataNascimento}">03/04/2004</span></h3>
+         
+         <div class="flex flex-col items-start gap-2">
+             <di class="p-4">
+              <h3 class="text-2xl text-black">sexo: <span th:text="${usr.sexo}">Masculino</span></h3>
+              <h3 class="text-2xl text-black">nascimento: <span th:text="${usr.dataNascimento}">03/04/2004</span></h3>
              </div>
              
          </div>
-         <div class="mt-[160px] p-4">
+         <div class="mt-20 p-4">
+
              <section class="py-8">
              <h2 class="text-black text-3xl font-semibold">Sobre mim</h2>
              <p th:text="${usr.bio}" class="text-neutral-600 indent-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor beatae maxime vel ad ullam et a animi voluptates ipsum culpa recusandae, ratione harum molestias possimus maiores esse iusto officia dolores? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quaerat inventore aut delectus omnis ipsam. Asperiores ratione ipsum sapiente cum sunt quidem nobis sint itaque, temporibus magnam veniam saepe quae?</p>
          </section>
 
+         <section class="py-8">
+          <h2 class="text-black text-3xl font-semibold">Meus interesses de viagem</h2>
+          <p th:text="${usr.interesse}" class="text-neutral-600 indent-10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor beatae maxime vel ad ullam et a animi voluptates ipsum culpa recusandae, ratione harum molestias possimus maiores esse iusto officia dolores? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quaerat inventore aut delectus omnis ipsam. Asperiores ratione ipsum sapiente cum sunt quidem nobis sint itaque, temporibus magnam veniam saepe quae?</p>
+      </section>
+
          <section class="flex flex-col items-center">
              <h2 class="text-black text-3xl font-semibold mb-3">Meus Itinerários</h2>
              
-          <table class="shadow-md w-full">
-            <tr>
-              <th class="px-4 text-xl">Ponto Turístico</th>
-              <th class="px-4 text-xl">Data</th>
-              <th class="px-4 text-xl">Hora</th>
-              <th class="px-4 text-xl">Atividade</th>
-              <th class="px-4 text-xl text-cyan-500">Editar</th>
-              <th class="px-4 text-xl text-red-500">Deletar</th>
-            </tr>
+             <div class="flex flex-wrap gap-4 mx-auto">
 
-            <tbody>
-              <tr th:each="itr : ${itr}">
-                  <td th:text="${itr.Turistico.localidade}"></td>
-                  <td th:text="${itr.dia}"></td>
-                  <td th:text="${itr.hora}"></td>
-                  <td th:text="${itr.atividade}"></td>
-                  <td class="text-center">
-                      <a href="#" class="text-sky-500 font-semibold">Editar</a>
-                  </td>
-                  <td class="text-center">
-                      <form action="/" method="post">
-                          <input type="hidden" name="id" th:value="${itr.id}">
-                          <button class="text-red-500 font-semibold">deletar</button>
-                      </form>
-                  </td>
-              </tr>
-          </tbody>
-          </table>
+              <div th:each="itr : ${itr}" class="w-60 bg-gradient-to-l from-slate-200 to-slate-100 text-slate-600 border border-slate-300 grid grid-col-2 justify-center p-4 gap-4 rounded-lg shadow-md">
+                <div th:text="${itr.Turistico.localidade}" class="col-span-2 text-lg font-bold capitalize rounded-md">
+              
+                </div>
+                <div class="flex gap-3">
+                  <div th:text="${itr.dia}"></div>
+                  <div th:text="${itr.hora}"></div>
+                </div>
+                <div th:text="${itr.atividade}" class="col-span-2 rounded-md">
+                </div>
+                <div class="flex gap-3">
+                <a href="#" class="bi bi-pencil-square text-cyan-500"></a>
+                <a href="#" class="bi bi-trash3-fill text-red-500"></a>
+                </div>
+                
+              
+                </div>
+
+             </div>
+          
+
          </section>
-         <footer class="p-2 text-neutral-400">
-     All Rights Reserved
- </footer>
+          <footer class="p-2 text-neutral-400">
+            All Rights Reserved
+          </footer>
          </div>
      </div>
      
  </div>
-
+ <script type="text/javascript" th:src="@{/JS/Script.js}"></script>
 </body>
 
 </html>

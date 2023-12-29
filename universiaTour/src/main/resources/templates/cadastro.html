@@ -21,7 +21,7 @@
 
 <form action="" class="flex flex-col gap-3 items-center z-20">
     <h2 class="text-3xl text-white">registrar</h2>
-
+  <input type="hidden" th:value="${usr.id}" name="id">
     <div class="flex flex-col">
         <label for="nome" class="text-xl text-white">nome</label>
         <input type="text" class="text-xl border-b-2 border-gray p-1 bg-transparent text-white" placeholder="nome">
