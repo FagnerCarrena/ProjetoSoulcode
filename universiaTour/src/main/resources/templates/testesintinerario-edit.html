@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Usuário</title>
+</head>
+
+<body>
+  <h1>Editar Intinerario</h1>
+
+  <form action="/intinerario/${itr.id}" method="post" th:action="@{/intinerario/{id}(id=${itr.id})}">
+    <input type="hidden" name="id" th:value="${itr.id}">
+
+    <label for="dia">Dia</label>
+    <input type="date" name="dia" id="dia" th:value="${itr.dia}" required>
+    <br>
+
+    <label for="hora">Hora</label>
+    <input type="time" name="hora" id="hora" th:value="${itr.hora}" required>
+    <br>
+
+    <label for="atividade">Atividade</label>
+    <input type="text" name="atividade" id="atividade" th:value="${itr.atividade}" required>
+    <br>
+
+    <label for="usuarioId">Usuário_id</label>
+    <input type="number" name="usuarioId" id="usuarioId" th:value="${itr.usuario.id}" required>
+    <br>
+
+    <label for="turisticoId">Turistico_Id</label>
+    <input type="number" name="turisticoId" id="turisticoId" th:value="${itr.turistico.id}" required>
+    <br>
+
+
+    <button>Enviar</button>
+  </form>
+  <br>
+  <br>
+  <br>
+</body>
+
+</html>

@@ -3,6 +3,9 @@ package com.projetoFinal.universiaTour.model;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,6 +34,7 @@ public class Intinerario {
 
 @ManyToOne
 @JoinColumn
+@OnDelete(action = OnDeleteAction.CASCADE)
 Usuario usuario;
 
 @ManyToOne

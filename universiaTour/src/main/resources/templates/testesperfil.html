@@ -26,14 +26,12 @@
     <button>Editar</button>
   </a>
   <br>
-  <!-- <a href="'/testesperfil/'+${usr.id}+'/delete'" th:href="@{/testesperfil/{id}(id=${usr.id})}">
-    <button>Excluir</button>
-  </a> -->
 
-  <!-- <form action="/testesperfil/${usr.id}/delete" method="post">
-    <input type="hidden" name="id" value="${usr.id}">
-    <input type="submit" value="Excluir">
-  </form> -->
+  <form th:action="'/testesperfil/'+${usr.id}+'/delete'" method="post">
+    <input type="hidden" name="id" th:value="${usr.id}">
+    <input type="submit" value="Deletar">
+  </form>
+
 
 
   <table>
@@ -44,6 +42,8 @@
       <th>ATIVIDADE</th>
       <th>USUARIO_ID</th>
       <th>TURISTICO_LOCALIDADE</th>
+      <th>EXCLUIR</th>
+      <th>MODIFICAR</th>
     </tr>
     <tbody>
       <tr th:each="intinerarios : ${itr}">
@@ -53,10 +53,47 @@
         <td th:text="${intinerarios.atividade}"></td>
         <td th:text="${intinerarios.usuario.id}"></td>
         <td th:text="${intinerarios.turistico.localidade}"></td>
+        <td>
+          <form th:action="'/intinerario/'+${intinerarios.id}+'/delete'" method="post">
+            <input type="hidden" name="usuarioId" th:value="${intinerarios.usuario.id}">
+            <input type="hidden" name="id" th:value="${intinerarios.id}">
+            <input type="submit" value="Deletar">
+          </form>
+        </td>
+        <td>
+          <a th:href="'/intinerario/'+${intinerarios.id}+'/edit'">
+            <input type="hidden" name="usuarioId" th:value="${intinerarios.usuario.id}">
+            <button>Editar</button>
+          </a>
+        </td>
       </tr>
     </tbody>
   </table>
+  <br><br>
+  <form action="/novointinerario" method="post">
 
+    <label for="dia">Dia</label>
+    <input type="date" name="dia" id="dia" required>
+    <br>
+
+    <label for="hora">Hora</label>
+    <input type="time" name="hora" id="hora" required>
+    <br>
+
+    <label for="atividade">Atividade</label>
+    <input type="text" name="atividade" id="atividade" required>
+    <br>
+
+    <label for="usuarioId">UsuarioId</label>
+    <input type="number" name="usuarioId" id="usuarioId">
+    <br>
+
+    <label for="turisticoId">TuristicoId</label>
+    <input type="number" name="turisticoId" id="turisticoId">
+    <br>
+
+    <button>Criar</button>
+  </form>
 </body>
 
 </html>

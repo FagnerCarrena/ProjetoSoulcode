@@ -1,11 +1,16 @@
 package com.projetoFinal.universiaTour.controller;
 
-import java.net.URLEncoder;
+
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.projetoFinal.universiaTour.model.Intinerario;
 import com.projetoFinal.universiaTour.model.Turistico;
@@ -13,14 +18,6 @@ import com.projetoFinal.universiaTour.model.Usuario;
 import com.projetoFinal.universiaTour.repository.IntinerarioRepository;
 import com.projetoFinal.universiaTour.repository.TuristicoRepository;
 import com.projetoFinal.universiaTour.repository.UsuarioRepository;
-
-import jakarta.transaction.Transactional;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -52,7 +49,6 @@ public class PerfilController {
       return erro;
     }
   }
-//
 
 @GetMapping(value = "/testesperfil/{id}/edit")
   public ModelAndView update(@PathVariable Integer id){
@@ -68,7 +64,6 @@ public class PerfilController {
             return erro;
   }
 
-
 @PostMapping(value = "/testesperfil/{id}")
   public String edit(Usuario usuario) {
     try {
@@ -82,9 +77,9 @@ public class PerfilController {
     String url = "/testesperfil/" + usuario.getId();
     return "redirect:" + url;
   }
-@Transactional
+
 @PostMapping(value = "/testesperfil/{id}/delete")
-  public String delete(@RequestParam Integer id) {
+  public String delete(@PathVariable("id") Integer id) {
     try {
       usuarioRepository.deleteById(id);
       return "redirect:/home";
@@ -92,6 +87,16 @@ public class PerfilController {
       return "erro";
     }
   }
-  //
+//
+@PostMapping(value = "/cadastro")
+  public String create(Usuario usuario) {
+    try {
+      usuarioRepository.save(usuario);
+       String url = "/testesperfil/" + usuario.getId();
+    return "redirect:" + url;
+    } catch(Exception ex) {
+      return "erro";
+    }
+  }
 //
 }
