@@ -117,6 +117,9 @@ teste jwt
       return "erro";
     }
   }
-  jwt
+  jadicionamd
+  jjjj
+  llll
+  
 //
 }
