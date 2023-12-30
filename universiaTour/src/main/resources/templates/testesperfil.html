@@ -61,10 +61,16 @@
           </form>
         </td>
         <td>
-          <a th:href="'/intinerario/'+${intinerarios.id}+'/edit'">
+          <!-- <a th:href="'/intinerario/'+${intinerarios.id}+'/edit'">
             <input type="hidden" name="usuarioId" th:value="${intinerarios.usuario.id}">
+            <input type="hidden" name="intinerarioId" th:value="${intinerarios.id}">
             <button>Editar</button>
-          </a>
+          </a> -->
+          <form th:action="'/intinerario/'+${intinerarios.id}+'/edit'" method="get">
+            <input type="hidden" name="usuarioId" th:value="${intinerarios.usuario.id}">
+            <input type="hidden" name="intinerarioId" th:value="${intinerarios.id}">
+            <button type="submit">Editar</button>
+          </form>
         </td>
       </tr>
     </tbody>

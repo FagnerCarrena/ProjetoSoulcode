@@ -12,6 +12,7 @@
 
   <form action="/intinerario/${itr.id}" method="post" th:action="@{/intinerario/{id}(id=${itr.id})}">
     <input type="hidden" name="id" th:value="${itr.id}">
+    <input type="hidden" name="usuarioId" th:value="${usr.id}">
 
     <label for="dia">Dia</label>
     <input type="date" name="dia" id="dia" th:value="${itr.dia}" required>

@@ -70,9 +70,9 @@ public String delete(@RequestParam Integer usuarioId, @RequestParam Integer id){
   }
 }
 //
-@GetMapping(value = "/intinerario/{id}/edit")
-  public ModelAndView update(@PathVariable Integer id, @RequestParam Integer usuarioId){
-          Optional<Intinerario> intinerarioOpt= intinerarioRepository.findById(id);
+@GetMapping(value = "/intinerario/{intinerarioId}/edit")
+  public ModelAndView update(@RequestParam Integer intinerarioId, @RequestParam Integer usuarioId){
+          Optional<Intinerario> intinerarioOpt= intinerarioRepository.findById(intinerarioId);
           Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuarioId);
           List<Turistico> turisticos = turisticoRepository.findAll();
       if(intinerarioOpt.isPresent() && usuarioOpt.isPresent()) {
@@ -96,6 +96,7 @@ public String delete(@RequestParam Integer usuarioId, @RequestParam Integer id){
       Optional<Intinerario> intinerarioOpt = intinerarioRepository.findById(intinerario.getId());
       Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuarioId);
       if(intinerarioOpt.isPresent() && usuarioOpt.isPresent()) {
+        intinerario = intinerarioOpt.get();
         intinerarioRepository.save(intinerario);
         Usuario usuario = usuarioOpt.get();
         url = "/testesperfil/" + usuario.getId();
