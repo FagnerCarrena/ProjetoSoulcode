@@ -10,7 +10,7 @@
 <body>
   <h1>Editar Usuário</h1>
 
-  <form action="'/testesperfil/' + ${usr.id}" method="post">
+  <form action="/testesperfil/${usr.id}" method="post" th:action="@{/testesperfil/{id}(id=${usr.id})}">
     <input type="hidden" name="id" th:value="${usr.id}">
 
     <label for="nome">Nome</label>
@@ -43,6 +43,7 @@
 
     <button>Enviar</button>
   </form>
+  <br>
 
 
 </body>

@@ -14,10 +14,13 @@ import com.projetoFinal.universiaTour.repository.IntinerarioRepository;
 import com.projetoFinal.universiaTour.repository.TuristicoRepository;
 import com.projetoFinal.universiaTour.repository.UsuarioRepository;
 
+import jakarta.transaction.Transactional;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -64,21 +67,7 @@ public class PerfilController {
             erro.addObject("msg", "Cliente não encontrado");
             return erro;
   }
-//
-// @PostMapping(value = "/testesperfil/{id}")
-// public String edit(Usuario usuario){
-// try{
-//     Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuario.getId());
-//   if(usuarioOpt.isPresent()){
-//     usuarioRepository.save(usuario);
-//     return "'redirect:/testesperfil/' +  usuario.getId()";
-//   }
-// }catch(Exception exc){
-//   return "erro";
-// }
-//    return "'redirect:/testesperfil/' +  usuario.getId()";
-// }
-//
+
 
 @PostMapping(value = "/testesperfil/{id}")
 public ModelAndView edit(@PathVariable Integer id, Usuario usuario){
@@ -106,4 +95,28 @@ public String edit(Intinerario intinerario){
   return "'/testesperfil/' +  usuario.getId()";
 }
 teste jwt
+  public String edit(Usuario usuario) {
+    try {
+      Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuario.getId());
+      if(usuarioOpt.isPresent()) {
+        usuarioRepository.save(usuario);
+      }
+    } catch(Exception ex) {
+      return "erro";
+    }
+    String url = "/testesperfil/" + usuario.getId();
+    return "redirect:" + url;
+  }
+@Transactional
+@PostMapping(value = "/testesperfil/{id}/delete")
+  public String delete(@RequestParam Integer id) {
+    try {
+      usuarioRepository.deleteById(id);
+      return "redirect:/home";
+    } catch(Exception ex) {
+      return "erro";
+    }
+  }
+  //
+//
 }
