@@ -14,6 +14,8 @@ import com.projetoFinal.universiaTour.repository.IntinerarioRepository;
 import com.projetoFinal.universiaTour.repository.TuristicoRepository;
 import com.projetoFinal.universiaTour.repository.UsuarioRepository;
 
+import jakarta.transaction.Transactional;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
@@ -66,6 +68,7 @@ public class PerfilController {
             return erro;
   }
 
+
 @PostMapping(value = "/testesperfil/{id}")
   public String edit(Usuario usuario) {
     try {
@@ -79,30 +82,16 @@ public class PerfilController {
     String url = "/testesperfil/" + usuario.getId();
     return "redirect:" + url;
   }
-
-@PostMapping(value = "/perfil/delete")
+@Transactional
+@PostMapping(value = "/testesperfil/{id}/delete")
   public String delete(@RequestParam Integer id) {
     try {
       usuarioRepository.deleteById(id);
-      return "redirect:/";
+      return "redirect:/home";
     } catch(Exception ex) {
       return "erro";
     }
   }
-
-
-
-
   //
-@PostMapping(value = "/intinerario/edit")
-public String edit(Intinerario intinerario){
-  Optional<Intinerario> intinerarioOpt = intinerarioRepository.findById(intinerario.getId());
-  if(intinerarioOpt.isPresent()){
-    intinerarioRepository.save(intinerario);
-      }
-  return "'/testesperfil/' +  usuario.getId()";
-}
-
-
 //
 }
