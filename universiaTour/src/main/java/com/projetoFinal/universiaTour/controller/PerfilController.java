@@ -117,11 +117,7 @@ teste jwt
       return "erro";
     }
   }
-  jadicionamd
-  jjjj
-  llll
-  iiiiiii
-  pppppp
+  teste git 
 
 //
 }
