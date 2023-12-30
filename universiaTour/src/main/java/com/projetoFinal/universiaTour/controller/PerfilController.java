@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import com.projetoFinal.universiaTour.model.Intinerario;
@@ -65,6 +65,31 @@ public class PerfilController {
   }
 
 @PostMapping(value = "/testesperfil/{id}")
+public ModelAndView edit(@PathVariable Integer id, Usuario usuario){
+  ModelAndView modelAndView = new ModelAndView();
+  try{
+    usuarioRepository.findById(id).orElseThrow(() -> new Exception() );
+    usuarioRepository.save(usuario);
+    String pf = "" + usuario.getId();
+modelAndView.setViewName("'redirect:''" + pf);
+    
+  }catch(Exception exc){
+    modelAndView.setViewName("erro");
+    modelAndView.addObject("message", exc.getMessage());
+  }
+  return modelAndView;
+}
+
+//@PostMapping(value = "/intinerario/edit")
+public String edit(Intinerario intinerario){
+  Optional<Intinerario> intinerarioOpt = intinerarioRepository.findById(intinerario.getId());
+  if(intinerarioOpt.isPresent()){
+    intinerarioRepository.save(intinerario);
+    return "'redirect:/intinerario/edit";
+  }
+  return "'/testesperfil/' +  usuario.getId()";
+}
+
   public String edit(Usuario usuario) {
     try {
       Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuario.getId());
